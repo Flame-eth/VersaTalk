@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from './Logo'
 import DarkModeToggle from './DarkModeToggle'
+import UserButton from './UserButton'
 
 const Header = () => {
   return (
@@ -20,6 +21,7 @@ const Header = () => {
 
 
                 {/* user button */}
+                <UserButton />
             </div>
         </nav>
 
