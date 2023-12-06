@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 // }
 
 import { ThemeProvider } from "@/components/theme-provider";
+import ClientProviders from "@/components/ClientProviders";
 
 export default function RootLayout({
   children,
@@ -42,6 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <>
+    <ClientProviders>
       <html lang="en" suppressHydrationWarning>
         <head />
         <body>
@@ -56,6 +58,7 @@ export default function RootLayout({
           </ThemeProvider>
         </body>
       </html>
+    </ClientProviders>
     </>
   );
 }
