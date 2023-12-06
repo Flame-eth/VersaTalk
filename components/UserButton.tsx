@@ -13,6 +13,7 @@ import { Button } from "./ui/button";
 import { signIn, signOut } from "next-auth/react";
 
 function UserButton({ session }: { session: Session | null }) {
+  // Subsription listener 
   if (!session)
     return (
       <Button variant={"outline"} onClick={() => signIn()}>
@@ -28,7 +29,7 @@ function UserButton({ session }: { session: Session | null }) {
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuLabel>{session.user?.name as string}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {/* <DropdownMenuItem>Profile</DropdownMenuItem>
         <DropdownMenuItem>Billing</DropdownMenuItem>
