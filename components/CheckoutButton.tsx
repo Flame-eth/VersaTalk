@@ -8,7 +8,7 @@ function CheckoutButton() {
 
     const createCheckoutSession = async () => {
 
-        if (!session) return;
+        if (!session)  return;
         // const response = await fetch("/api/checkout_sessions", {
         // method: "POST",
         // });

@@ -1,5 +1,7 @@
+import { FirestoreAdapter } from "@auth/firebase-adapter"
 import { NextAuthOptions } from "next-auth"
 import  GoogleProvider  from "next-auth/providers/google"
+import { adminDb } from "./firebase-admin"
 
 export const authOptions: NextAuthOptions = {
 
@@ -11,7 +13,8 @@ export const authOptions: NextAuthOptions = {
     ],
     session:{
         strategy: "jwt",
-    }
+    },
+    adapter: FirestoreAdapter(adminDb)
     // providers: [
     //     Providers.GitHub({
     //     clientId: process.env.GITHUB_ID,
@@ -19,7 +22,7 @@ export const authOptions: NextAuthOptions = {
     //     })
     // ],
     // database: process.env.DATABASE_URL,
-    // session: {
+    // session: { 
     //     jwt: true
     // },
     // jwt: {
