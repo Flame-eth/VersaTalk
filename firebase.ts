@@ -8,12 +8,12 @@ import { getFunctions } from "firebase/functions";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC_LiWRXEAdZwpfq8vSo0rbz2spuM9bAtI",
-  authDomain: "versatalk-b2c41.firebaseapp.com",
-  projectId: "versatalk-b2c41",
-  storageBucket: "versatalk-b2c41.appspot.com",
-  messagingSenderId: "770307459353",
-  appId: "1:770307459353:web:02fc975c6a7e084e6c9d88"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBSE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
