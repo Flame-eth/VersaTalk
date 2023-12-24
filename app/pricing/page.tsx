@@ -1,7 +1,11 @@
+import { authOptions } from "@/auth";
 import PricingCards from "@/components/PricingCards";
+import { getServerSession } from "next-auth";
 import React from "react";
 
-function PricingPage() {
+async function  PricingPage() {
+
+  const session = getServerSession(authOptions);
   return (
     <div className="isolate overflow-hidden bg-gray-900">
       <div
