@@ -14,6 +14,8 @@ async function syncFirebaseAuth(session: Session) {
             console.error("Firebase auth error", error);
             
         }
+    } else {
+        await auth.signOut();
     }
     
 }
@@ -25,6 +27,8 @@ function FirebaseAuthProvider(
 
     useEffect(() => {
         if (!session) return;
+
+        syncFirebaseAuth(session);
        
 
 

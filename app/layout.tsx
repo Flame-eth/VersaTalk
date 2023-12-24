@@ -35,6 +35,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "@/components/theme-provider";
 import ClientProviders from "@/components/ClientProviders";
+import FirebaseAuthProvider from "@/components/FirebaseAuthProvider";
 
 export default function RootLayout({
   children,
@@ -47,6 +48,7 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <head />
         <body className="flex flex-col min-h-screen">
+          <FirebaseAuthProvider  >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -56,6 +58,7 @@ export default function RootLayout({
             <Header />
             {children}
           </ThemeProvider>
+          </FirebaseAuthProvider>
         </body>
       </html>
     </ClientProviders>
